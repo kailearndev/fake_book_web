@@ -1,6 +1,5 @@
 import { createFileRoute, redirect, useRouter, useRouterState } from '@tanstack/react-router'
 import { z } from 'zod'
-import { useAuth } from '../auth'
 import React from 'react'
 import { Code } from 'lucide-react'
 import { authService } from '../services/auth.service'
@@ -18,7 +17,7 @@ export const Route = createFileRoute('/register')({
   component: RouteComponent,
 })
 function RouteComponent() {
-  const auth = useAuth()
+  // const auth = useAuth()
   const router = useRouter()
   const isLoading = useRouterState({ select: (s) => s.isLoading })
   const navigate = Route.useNavigate()
